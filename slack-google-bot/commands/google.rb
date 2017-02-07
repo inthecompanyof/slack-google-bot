@@ -11,13 +11,16 @@ module SlackGoogleBot
                                         key: ENV['GOOGLE_API_KEY'],
                                         cx: ENV['GOOGLE_CSE_ID']
                                       })
-        result = results['items']
-        if result
-          message = result['title'] + "\n" + result['link'] + "\n" + result['snippet']
+        result = results['items'].first if results['items']
+        if results['items']
+          results['items'].each do |result|
+	           message = result['htmlTitle'] + "\n" + result['link'] + "\n" + result['snippet'] +"\n"
+	            client.say(text: message, channel: data.channel)
+        end
         else
           message = "No search results for `#{expression}`"
+          client.say(text: message, channel: data.channel)
         end
-        client.say(text: message, channel: data.channel)
       end
     end
   end
