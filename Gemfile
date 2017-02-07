@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'celluloid-io'
 gem 'slack-ruby-bot'
 gem 'puma'
