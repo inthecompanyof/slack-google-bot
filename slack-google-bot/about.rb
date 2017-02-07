@@ -1,7 +1,7 @@
 module SlackGoogleBot
   ABOUT = <<-ABOUT
-    #{SlackGoogleBot::VERSION}
-    https://github.com/dblock/slack-google-bot
-    https://twitter.com/dblockdotorg
+    This is hack by @inthecompany
+    Job search from http://www.unicornhunt.io
+    Blog search from http://fieldguide.unicornhunt.io
   ABOUT
 end
